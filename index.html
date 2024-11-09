@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>老赖网 - 将老赖打进ICU</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="老赖网，将老赖打进ICU, 专业打击老赖">
+    <meta name="keywords" content="老赖网,将老赖打进ICU,专业打击老赖,香港老赖,深圳老赖,中国老赖,外国老赖">
+    <base target="_blank"/>
+
+    <!-- External CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
     <style>
         body {
             margin: 0;
@@ -13,6 +26,8 @@
             background-color: #111;
             color: white;
         }
+
+        /* Hero Section Styles */
         .hero {
             position: relative;
             width: 100%;
@@ -21,6 +36,7 @@
             background-size: cover;
             animation: bgAnimation 10s infinite alternate;
         }
+
         .content {
             position: absolute;
             top: 50%;
@@ -28,18 +44,22 @@
             transform: translate(-50%, -50%);
             text-align: center;
             z-index: 10;
+            padding: 1rem;
         }
-          .headline {
-            font-size: 10rem; /* 文字变大 */
+
+        .headline {
+            font-size: 10rem;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             animation: colorFlash 3s infinite alternate;
         }
+
         .subheadline {
-            font-size: 6rem; /* 文字变大 */
+            font-size: 6rem;
             margin-top: 1rem;
             animation: colorFlash 3s infinite alternate-reverse;
         }
+
         @keyframes colorFlash {
             0% { color: #00bcd4; }
             25% { color: #f44336; }
@@ -47,22 +67,76 @@
             75% { color: #9c27b0; }
             100% { color: #4caf50; }
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 6rem;
+            }
+            .subheadline {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .headline {
+                font-size: 4rem;
+            }
+            .subheadline {
+                font-size: 2rem;
+            }
+        }
+
+        /* Button Styles */
+        .btn {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0097a7;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
+
 </head>
 <body>
 
-    <!-- Hero Section with 3D Background -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="content">
             <h1 class="headline">老赖网</h1>
             <p class="subheadline">将老赖打进ICU</p>
-            <button class="btn">了解更多</button>
+            <button class="btn bg-blue-500 text-white py-3 px-8 rounded">了解更多</button>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-900 text-center text-white py-4">
-        <p>&copy; 2024 老赖网 | <a href="mailto:www.laolai.icu" class="text-blue-400">联系我们</a></p>
+    <footer>
+        <p>&copy; 2024-2049 老赖网www.laolai.icu | <a href="mailto:contact@laolai.icu">联系我们</a></p>
     </footer>
 
 </body>

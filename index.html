@@ -50,6 +50,7 @@
         .headline {
             font-size: 10rem;
             font-weight: bold;
+            white-space: nowrap; /* 强制不换行 */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             animation: colorFlash 3s infinite alternate;
         }
@@ -68,26 +69,26 @@
             100% { color: #4caf50; }
         }
 
-        /* Responsive Design */
+        /* 响应式调整字体大小 */
         @media (max-width: 768px) {
             .headline {
-                font-size: 6rem;
+                font-size: 7rem; /* 缩小屏幕时字体逐步变小 */
+            }
+            .subheadline {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .headline {
+                font-size: 5rem;
             }
             .subheadline {
                 font-size: 3rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .headline {
-                font-size: 4rem;
-            }
-            .subheadline {
-                font-size: 2rem;
-            }
-        }
-
-        /* Button Styles */
+        /* 按钮样式 */
         .btn {
             margin-top: 2rem;
             padding: 1rem 2rem;
@@ -136,7 +137,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024-2049 老赖网www.laolai.icu | <a href="mailto:contact@laolai.icu">联系我们</a></p>
+        <p>&copy; 202-2049 老赖网www.laolai.icu | <a href="mailto:contact@laolai.icu">联系我们</a></p>
     </footer>
 
 </body>

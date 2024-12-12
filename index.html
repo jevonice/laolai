@@ -25,6 +25,9 @@
             font-family: 'Arial', sans-serif;
             background-color: #111;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 居中对齐 */
         }
 
         /* Hero Section Styles */
@@ -35,13 +38,12 @@
             background: url('laolai.png') center center no-repeat;
             background-size: cover;
             animation: bgAnimation 10s infinite alternate;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
         }
 
         .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             text-align: center;
             z-index: 10;
             padding: 1rem;
@@ -50,7 +52,7 @@
         .headline {
             font-size: 10rem;
             font-weight: bold;
-            white-space: nowrap; /* 强制不换行 */
+            white-space: nowrap;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             animation: colorFlash 3s infinite alternate;
         }
@@ -58,7 +60,7 @@
         .subheadline {
             font-size: 6rem;
             margin-top: 1rem;
-            white-space: nowrap; /* 强制不换行 */
+            white-space: nowrap;
             animation: colorFlash 3s infinite alternate-reverse;
         }
 
@@ -73,7 +75,7 @@
         /* 响应式调整字体大小 */
         @media (max-width: 768px) {
             .headline {
-                font-size: 7rem; /* 缩小屏幕时字体逐步变小 */
+                font-size: 7rem;
             }
             .subheadline {
                 font-size: 4rem;
@@ -106,31 +108,16 @@
             background-color: #0097a7;
         }
 
-        /* Footer Styles */
-        footer {
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        footer a {
-            color: #4caf50;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* 新增的广告区域样式 */
+        /* 广告区域样式 */
         .ad-section {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            margin: 3rem 0;
+            flex-wrap: wrap;
+            gap: 2rem;
             padding: 2rem;
             background-color: #222;
+            margin: 3rem 0;
         }
 
         .ad-item {
@@ -148,30 +135,50 @@
             font-size: 1.2rem;
             color: #bbb;
         }
-		/* 友情链接部分样式 */
-.friend-links {
-    background-color: #333; /* 背景色 */
-    padding: 1rem 0;
-    margin-bottom: 2rem; /* 分隔友情链接和下面的内容 */
-}
 
-.friend-links .container {
-    display: flex;
-    flex-wrap: wrap; /* 超过一行自动换行 */
-    justify-content: center; /* 水平居中 */
-    gap: 15px; /* 设置链接之间的间距 */
-}
+        /* 友情链接部分样式 */
+        .friend-links {
+            background-color: #333;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
 
-.friend-links a {
-    color: #4caf50; /* 链接颜色 */
-    text-decoration: none; /* 去除下划线 */
-    font-size: 1rem;
-    padding: 5px 10px;
-}
+        .friend-links .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
 
-.friend-links a:hover {
-    text-decoration: underline; /* 鼠标悬停时显示下划线 */
-}
+        .friend-links a {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+        }
+
+        .friend-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 
 </head>
@@ -186,23 +193,23 @@
         </div>
     </section>
 
-    <!-- 广告图片区域 -->
-    <section class="ad-section">
+     <!-- 广告图片区域 -->
+     <section class="ad-section">
         <div class="ad-item">
             <img src="ad.jpg" alt="老赖1">
-            <p class="ad-description">香港老赖黄裕，外贸发货不付运费</p>
+            <p class="ad-description">香港老赖黄裕，外贸老赖</p>
         </div>
         <div class="ad-item">
             <img src="ad.jpg" alt="老赖2">
-            <p class="ad-description">香港老赖wong yue，拖欠运费不付</p>
+            <p class="ad-description">香港老赖wong yue，拖欠运费</p>
         </div>
         <div class="ad-item">
             <img src="ad.jpg" alt="老赖3">
-            <p class="ad-description">香港老赖，拖欠运费RMB55800</p>
+            <p class="ad-description">香港老赖，拖欠运费5.58万</p>
         </div>
         <div class="ad-item">
             <img src="ad.jpg" alt="老赖4">
-            <p class="ad-description">香港老赖，海运发货目的港弃货</p>
+            <p class="ad-description">香港老赖，海运目的港弃货</p>
         </div>
     </section>
 
@@ -239,7 +246,7 @@
                     <a target="_blank" href="https://www.laolai.icu">货代老赖</a> | 
                     <a target="_blank" href="https://www.laolai.icu">外贸老赖</a> | 
                     <a target="_blank" href="https://www.laolai.icu">外国老赖</a>|
-					<a target="_blank" href="https://www.laolai.icu">老赖身份证</a>
+		    <a target="_blank" href="https://www.laolai.icu">老赖身份证</a>
                 </div>
                 <!-- 版权部分 -->
                 <div class="rights">

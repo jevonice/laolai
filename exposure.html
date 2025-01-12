@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老赖曝光 - 老赖网丨将老赖打进ICU,愿天下无赖</title>
+    <meta name="description" content="老赖网（www.laolai.icu）将老赖打进ICU,愿天下无赖。老赖网致力于打击和曝光各类“老赖”，让每个欠债不还的人都无处可逃。帮助用户快速识别失信人员。通过全面的老赖名单、身份证查询及黑名单信息，老赖网将帮助您维护个人和企业的合法权益，拒绝让“老赖”逃脱法律责任。">
+    <meta name="keywords" content="老赖网, 打击老赖, 老赖查询, 失信被执行人, 老赖黑名单, 老赖身份证查询, 香港老赖, 深圳老赖, 广州老赖, 外国老赖, 货代老赖, 外贸老赖, 法律曝光老赖, 老赖信息查询">
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 1rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .case-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-title {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-description {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .case-meta {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: auto;
+        }
+
+        .case-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 1400px) {
+            .case-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .case-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-gavel logo-icon"></i>
+                老赖网
+            </a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="./exposure.html" class="active">老赖曝光</a></li>
+                <li><a href="./hongkong.html">香港老赖</a></li>
+                <li><a href="./search.html">老赖查询</a></li>
+                <li><a href="./blacklist.html">老赖黑名单</a></li>
+                <li><a href="./trade.html">外贸老赖</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <h1 class="page-title">老赖曝光台</h1>
+        
+        <div class="case-grid">
+            <article class="case-card">
+                <img src="./images/ad.jpg" alt="香港老赖黄裕案例" class="case-image">
+                <div class="case-content">
+                    <h2 class="case-title">
+                        <i class="fas fa-user-times"></i>
+                        香港老赖黄裕案例
+                    </h2>
+                    <p class="case-description">涉及外贸拖欠运费，拖欠金额5.58万人民币。多次联系无果，现予以曝光。案件已移交香港警方处理，目前正在追讨中。</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i>发布日期: 2024-01-15</span>
+                        <span><i class="fas fa-hashtag"></i>案件编号: HK2024001</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <img src="./images/ad.jpg" alt="老赖wong yue案例" class="case-image">
+                <div class="case-content">
+                    <h2 class="case-title">
+                        <i class="fas fa-user-times"></i>
+                        Wong Yue 拖欠运费案例
+                    </h2>
+                    <p class="case-description">香港货主Wong Yue，长期拖欠运费，影响多家货代公司正常经营。已通过香港贸易发展局投诉，等待处理结果。</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i>发布日期: 2024-01-20</span>
+                        <span><i class="fas fa-hashtag"></i>案件编号: HK2024002</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <img src="./images/ad.jpg" alt="香港老赖拖欠运费案例" class="case-image">
+                <div class="case-content">
+                    <h2 class="case-title">
+                        <i class="fas fa-user-times"></i>
+                        香港某贸易公司拖欠运费案例
+                    </h2>
+                    <p class="case-description">拖欠运费5.58万人民币，经过多方协调，目前已达成还款协议，分期支付中。</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i>发布日期: 2024-01-25</span>
+                        <span><i class="fas fa-hashtag"></i>案件编号: HK2024003</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <img src="./images/ad.jpg" alt="香港老赖弃货案例" class="case-image">
+                <div class="case-content">
+                    <h2 class="case-title">
+                        <i class="fas fa-user-times"></i>
+                        香港进口商弃货案例
+                    </h2>
+                    <p class="case-description">在海运目的港恶意弃货，造成大量损失。已向香港海关和贸发局投诉，同时通过法律途径追讨损失。</p>
+                    <div class="case-meta">
+                        <span><i class="fas fa-calendar"></i>发布日期: 2024-01-30</span>
+                        <span><i class="fas fa-hashtag"></i>案件编号: HK2024004</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <div class="friend-links">
+        <div class="container">
+            <a target="_blank" href="https://zxgk.court.gov.cn/shixin/"><i class="fas fa-exclamation-triangle"></i> 老赖查询</a>
+            <a target="_blank" href="https://wenshu.court.gov.cn/"><i class="fas fa-file-alt"></i> 中国裁判文书网</a>
+            <a target="_blank" href="https://splcgk.court.gov.cn/gzfwww/"><i class="fas fa-gavel"></i> 中国审判流程信息公开网</a>
+            <a target="_blank" href=""><i class="fas fa-book"></i> 人民法院案例库</a>
+            <a target="_blank" href=""><i class="fas fa-building"></i> 企业信息公开网</a>
+            <a target="_blank" href="https://credit.gd.gov.cn/"><i class="fas fa-credit-card"></i> 信用广东</a>
+            <a target="_blank" href="https://www.szcredit.org.cn/"><i class="fas fa-city"></i> 信用深圳</a>
+            <a target="_blank" href=""><i class="fas fa-ship"></i> 中国海关企业查询</a>
+        </div>        
+    </div>
+
+    <footer>
+        <div id="doc-ft">
+            <div id="copyright" class="gmodule g-box">
+                <div class="copyright-bd">
+                    <div class="footer-links">
+                        <a target="_blank" href="https://www.laolai.icu">老赖爆光</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">香港老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">深圳老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">广州老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">佛山老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">广东老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">浙江老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">福建老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">老赖查询</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">老赖黑名单</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">货代老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">外贸老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">外国老赖</a> |
+                        <a target="_blank" href="https://www.laolai.icu">老赖身份证</a>
+                    </div>
+                    <div class="rights">
+                        <span>Copyright © 2024-2049 老赖网 www.laolai.icu All Rights Reserved.</span>
+                        <br>
+                        <a href="mailto:contact@laolai.icu">联系我们, 打击老赖进ICU, 愿天下无赖。</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

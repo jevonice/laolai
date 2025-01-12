@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外贸老赖 - 老赖网丨将老赖打进ICU,愿天下无赖</title>
+    <meta name="description" content="老赖网（www.laolai.icu）将老赖打进ICU,愿天下无赖。老赖网致力于打击和曝光各类“老赖”，让每个欠债不还的人都无处可逃。帮助用户快速识别失信人员。通过全面的老赖名单、身份证查询及黑名单信息，老赖网将帮助您维护个人和企业的合法权益，拒绝让“老赖”逃脱法律责任。">
+    <meta name="keywords" content="老赖网, 打击老赖, 老赖查询, 失信被执行人, 老赖黑名单, 老赖身份证查询, 香港老赖, 深圳老赖, 广州老赖, 外国老赖, 货代老赖, 外贸老赖, 法律曝光老赖, 老赖信息查询">
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .trade-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .trade-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .trade-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .trade-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .trade-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .trade-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .trade-title {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trade-amount {
+            font-size: 1.1rem;
+            color: #f44336;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trade-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .trade-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trade-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 1rem 0;
+            flex: 1;
+            font-size: 0.95rem;
+        }
+
+        .trade-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-pending {
+            background: rgba(255, 152, 0, 0.2);
+            color: #ff9800;
+        }
+
+        .status-resolved {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+
+        @media (max-width: 1400px) {
+            .trade-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .trade-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .trade-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trade-list {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .stat-icon {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trade-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .trade-container {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 其余HTML内容保持不变 -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-gavel logo-icon"></i>
+                老赖网
+            </a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="./exposure.html">老赖曝光</a></li>
+                <li><a href="./hongkong.html">香港老赖</a></li>
+                <li><a href="./search.html">老赖查询</a></li>
+                <li><a href="./blacklist.html">老赖黑名单</a></li>
+                <li><a href="./trade.html" class="active">外贸老赖</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <h1 class="page-title">外贸老赖</h1>
+        
+        <div class="trade-container">
+            <!-- 其余内容保持不变 -->
+            <div class="trade-stats">
+                <div class="stat-card">
+                    <i class="fas fa-file-invoice stat-icon"></i>
+                    <div class="stat-number">156</div>
+                    <div class="stat-label">在追讨案件</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign stat-icon"></i>
+                    <div class="stat-number">$2.8M</div>
+                    <div class="stat-label">涉案总金额</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle stat-icon"></i>
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">已解决案件</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line stat-icon"></i>
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">成功追讨率</div>
+                </div>
+            </div>
+
+            <div class="trade-list">
+                <!-- 案件卡片内容保持不变 -->
+                <article class="trade-item">
+                    <div class="trade-header">
+                        <h2 class="trade-title">
+                            <i class="fas fa-building"></i>
+                            香港某贸易公司
+                        </h2>
+                        <span class="trade-amount">
+                            <i class="fas fa-dollar-sign"></i>
+                            $580,000
+                        </span>
+                    </div>
+                    <span class="trade-status status-pending">
+                        <i class="fas fa-clock"></i>
+                        追讨中
+                    </span>
+                    <div class="trade-info">
+                        <span><i class="fas fa-hashtag"></i>案件编号：FT2024001</span>
+                        <span><i class="fas fa-calendar"></i>发布日期：2024-01-15</span>
+                        <span><i class="fas fa-map-marker-alt"></i>所在地：香港</span>
+                    </div>
+                    <p class="trade-description">
+                        涉及多起外贸诈骗，拖欠多家供应商货款。已通过香港贸发局投诉，并启动法律程序。
+                    </p>
+                </article>
+
+                <article class="trade-item">
+                    <div class="trade-header">
+                        <h2 class="trade-title">
+                            <i class="fas fa-building"></i>
+                            深圳某外贸公司
+                        </h2>
+                        <span class="trade-amount">
+                            <i class="fas fa-dollar-sign"></i>
+                            $320,000
+                        </span>
+                    </div>
+                    <span class="trade-status status-resolved">
+                        <i class="fas fa-check-circle"></i>
+                        已解决
+                    </span>
+                    <div class="trade-info">
+                        <span><i class="fas fa-hashtag"></i>案件编号：FT2024002</span>
+                        <span><i class="fas fa-calendar"></i>发布日期：2024-01-20</span>
+                        <span><i class="fas fa-map-marker-alt"></i>所在地：深圳</span>
+                    </div>
+                    <p class="trade-description">
+                        拖欠货款，经多方协调后达成还款协议，目前已全额支付欠款。
+                    </p>
+                </article>
+
+                <article class="trade-item">
+                    <div class="trade-header">
+                        <h2 class="trade-title">
+                            <i class="fas fa-building"></i>
+                            广州某进出口公司
+                        </h2>
+                        <span class="trade-amount">
+                            <i class="fas fa-dollar-sign"></i>
+                            $450,000
+                        </span>
+                    </div>
+                    <span class="trade-status status-pending">
+                        <i class="fas fa-clock"></i>
+                        追讨中
+                    </span>
+                    <div class="trade-info">
+                        <span><i class="fas fa-hashtag"></i>案件编号：FT2024003</span>
+                        <span><i class="fas fa-calendar"></i>发布日期：2024-01-25</span>
+                        <span><i class="fas fa-map-marker-alt"></i>所在地：广州</span>
+                    </div>
+                    <p class="trade-description">
+                        恶意拖欠货款，多次承诺还款未履行。已向法院提起诉讼，等待开庭。
+                    </p>
+                </article>
+
+                <article class="trade-item">
+                    <div class="trade-header">
+                        <h2 class="trade-title">
+                            <i class="fas fa-building"></i>
+                            东莞某外贸公司
+                        </h2>
+                        <span class="trade-amount">
+                            <i class="fas fa-dollar-sign"></i>
+                            $280,000
+                        </span>
+                    </div>
+                    <span class="trade-status status-pending">
+                        <i class="fas fa-clock"></i>
+                        追讨中
+                    </span>
+                    <div class="trade-info">
+                        <span><i class="fas fa-hashtag"></i>案件编号：FT2024004</span>
+                        <span><i class="fas fa-calendar"></i>发布日期：2024-01-28</span>
+                        <span><i class="fas fa-map-marker-alt"></i>所在地：东莞</span>
+                    </div>
+                    <p class="trade-description">
+                        拖欠多家供应商货款，屡次承诺还款但未履行。已向相关部门投诉并准备法律诉讼。
+                    </p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- 友情链接和页脚部分保持不变 -->
+    <div class="friend-links">
+        <div class="container">
+            <a target="_blank" href="https://zxgk.court.gov.cn/shixin/"><i class="fas fa-exclamation-triangle"></i> 老赖查询</a>
+            <a target="_blank" href="https://wenshu.court.gov.cn/"><i class="fas fa-file-alt"></i> 中国裁判文书网</a>
+            <a target="_blank" href="https://splcgk.court.gov.cn/gzfwww/"><i class="fas fa-gavel"></i> 中国审判流程信息公开网</a>
+            <a target="_blank" href=""><i class="fas fa-book"></i> 人民法院案例库</a>
+            <a target="_blank" href=""><i class="fas fa-building"></i> 企业信息公开网</a>
+            <a target="_blank" href="https://credit.gd.gov.cn/"><i class="fas fa-credit-card"></i> 信用广东</a>
+            <a target="_blank" href="https://www.szcredit.org.cn/"><i class="fas fa-city"></i> 信用深圳</a>
+            <a target="_blank" href=""><i class="fas fa-ship"></i> 中国海关企业查询</a>
+        </div>        
+    </div>
+
+    <footer>
+        <div id="doc-ft">
+            <div id="copyright" class="gmodule g-box">
+                <div class="copyright-bd">
+                    <div class="footer-links">
+                        <a target="_blank" href="https://www.laolai.icu">老赖爆光</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">香港老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">深圳老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">广州老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">佛山老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">广东老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">浙江老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">福建老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">老赖查询</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">老赖黑名单</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">货代老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">外贸老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">外国老赖</a> |
+                        <a target="_blank" href="https://www.laolai.icu">老赖身份证</a>
+                    </div>
+                    <div class="rights">
+                        <span>Copyright © 2024-2049 老赖网 www.laolai.icu All Rights Reserved.</span>
+                        <br>
+                        <a href="mailto:contact@laolai.icu">联系我们, 打击老赖进ICU, 愿天下无赖。</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

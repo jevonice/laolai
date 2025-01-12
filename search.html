@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老赖查询 - 老赖网丨将老赖打进ICU,愿天下无赖</title>
+    <meta name="description" content="老赖网（www.laolai.icu）将老赖打进ICU,愿天下无赖。老赖网致力于打击和曝光各类“老赖”，让每个欠债不还的人都无处可逃。帮助用户快速识别失信人员。通过全面的老赖名单、身份证查询及黑名单信息，老赖网将帮助您维护个人和企业的合法权益，拒绝让“老赖”逃脱法律责任。">
+    <meta name="keywords" content="老赖网, 打击老赖, 老赖查询, 失信被执行人, 老赖黑名单, 老赖身份证查询, 香港老赖, 深圳老赖, 广州老赖, 外国老赖, 货代老赖, 外贸老赖, 法律曝光老赖, 老赖信息查询">
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .search-form {
+            margin-bottom: 2rem;
+        }
+
+        .search-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .search-button {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background: #0097a7;
+        }
+
+        .search-options {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            color: var(--text-color);
+        }
+
+        .search-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .search-tips {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+        }
+
+        .search-tips h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .search-tips ul {
+            margin: 1rem 0 0;
+            padding-left: 1.5rem;
+        }
+
+        .search-tips li {
+            margin-bottom: 0.5rem;
+        }
+
+        .search-results {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+        }
+
+        .search-message {
+            text-align: center;
+        }
+
+        .search-message ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .search-message a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .search-message a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                padding: 1rem;
+            }
+
+            .search-input-group {
+                flex-direction: column;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .search-options {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-gavel logo-icon"></i>
+                老赖网
+            </a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="./exposure.html">老赖曝光</a></li>
+                <li><a href="./hongkong.html">香港老赖</a></li>
+                <li><a href="./search.html" class="active">老赖查询</a></li>
+                <li><a href="./blacklist.html">老赖黑名单</a></li>
+                <li><a href="./trade.html">外贸老赖</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <h1 class="page-title">老赖查询</h1>
+        
+        <div class="search-container">
+            <div class="search-form">
+                <div class="search-input-group">
+                    <input type="text" id="searchInput" placeholder="输入姓名、公司名称或身份证号" class="search-input">
+                    <button id="searchBtn" class="search-button">
+                        <i class="fas fa-search"></i>
+                        查询
+                    </button>
+                </div>
+                <div class="search-options">
+                    <label>
+                        <input type="radio" name="searchType" value="person" checked>
+                        个人查询
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" value="company">
+                        企业查询
+                    </label>
+                </div>
+            </div>
+
+            <div class="search-tips">
+                <h3>查询说明：</h3>
+                <ul>
+                    <li>个人查询请输入姓名或身份证号</li>
+                    <li>企业查询请输入企业名称或统一社会信用代码</li>
+                    <li>支持模糊查询，建议输入完整信息以获得准确结果</li>
+                    <li>查询结果来源于全国法院系统和信用中国</li>
+                </ul>
+            </div>
+
+            <div id="searchResults" class="search-results">
+                <div class="search-message">
+                    <p>请输入查询内容</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="friend-links">
+        <div class="container">
+            <a target="_blank" href="https://zxgk.court.gov.cn/shixin/"><i class="fas fa-exclamation-triangle"></i> 老赖查询</a>
+            <a target="_blank" href="https://wenshu.court.gov.cn/"><i class="fas fa-file-alt"></i> 中国裁判文书网</a>
+            <a target="_blank" href="https://splcgk.court.gov.cn/gzfwww/"><i class="fas fa-gavel"></i> 中国审判流程信息公开网</a>
+            <a target="_blank" href=""><i class="fas fa-book"></i> 人民法院案例库</a>
+            <a target="_blank" href=""><i class="fas fa-building"></i> 企业信息公开网</a>
+            <a target="_blank" href="https://credit.gd.gov.cn/"><i class="fas fa-credit-card"></i> 信用广东</a>
+            <a target="_blank" href="https://www.szcredit.org.cn/"><i class="fas fa-city"></i> 信用深圳</a>
+            <a target="_blank" href=""><i class="fas fa-ship"></i> 中国海关企业查询</a>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div id="doc-ft">
+            <div id="copyright" class="gmodule g-box">
+                <div class="copyright-bd">
+                    <div class="footer-links">
+                        <a target="_blank" href="https://www.laolai.icu">老赖爆光</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">香港老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">深圳老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">广州老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">佛山老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">广东老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">浙江老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">福建老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">老赖查询</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">老赖黑名单</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">货代老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">外贸老赖</a> | 
+                        <a target="_blank" href="https://www.laolai.icu">外国老赖</a> |
+                        <a target="_blank" href="https://www.laolai.icu">老赖身份证</a>
+                    </div>
+                    <div class="rights">
+                        <span>Copyright © 2024-2049 老赖网 www.laolai.icu All Rights Reserved.</span>
+                        <br>
+                        <a href="mailto:contact@laolai.icu">联系我们, 打击老赖进ICU, 愿天下无赖。</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            const searchType = document.querySelector('input[name="searchType"]:checked').value;
+            
+            if (!query) {
+                alert('请输入查询内容');
+                return;
+            }
+
+            searchResults.innerHTML = `
+                <div class="search-message">
+                    <p>正在查询中，请稍候...</p>
+                    <p>您可以直接访问以下网站进行查询：</p>
+                    <ul>
+                        <li><a href="https://zxgk.court.gov.cn/shixin/" target="_blank">全国法院失信被执行人查询</a></li>
+                        <li><a href="https://www.gsxt.gov.cn/" target="_blank">国家企业信用信息公示系统</a></li>
+                        <li><a href="https://www.creditchina.gov.cn/" target="_blank">信用中国</a></li>
+                    </ul>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
